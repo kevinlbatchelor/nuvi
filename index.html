@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nuvi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+    <link rel="stylesheet" href="main.css">
+    <!--lib-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body ng-app="myApp" layout="column">
+
+<div ng-controller="ctrl as ctrl" class="wrapper">
+    <div class="list-hex-grid" ng-repeat="chunk in ctrl.data" ng-class-even="'even'">
+        <div ng-repeat="post in chunk | limitTo:ctrl.qty">
+            <div class="social">
+                <div class="flipper">
+                    <div class="front">
+                        <div class="social-item">
+                            <div class="social-type">
+                                <i class="fa fa-facebook" ng-if="post.provider == 'facebook'"></i>
+                                <i class="fa fa-tumblr" ng-if="post.provider == 'tumblr'"></i>
+                                <i class="fa fa-instagram" ng-if="post.provider == 'instagram'"></i>
+                                <i class="fa fa-twitter" ng-if="post.provider == 'twitter'"></i>
+                            </div>
+                            <div class="name">{{post.actor_name}}</div>
+                            <div class="date">
+                                {{post.activity_date | date}}
+                            </div>
+                        </div>
+                        <div class="hex">
+                            <a href="#">
+                                <div class="hex-1"></div>
+                                <div class="hex-2"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="social-item">
+                            <div class="message" ng-if="post.activity_attachment_type !='image/jpeg'">{{post.activity_message}}</div>
+                            <div class="activity-likes">{{post.activity_likes}}</div>
+                            <div class="subText">likes</div>
+                        </div>
+                        <div class="hex">
+                            <a href="#">
+                                <div class="hex-1"></div>
+                                <div class="hex-2"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
