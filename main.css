@@ -79,7 +79,7 @@ html, body {
     transform: rotate(60deg) translate(40px, 40px);
 }
 
-.list-hex-grid div.hex > a{
+.list-hex-grid div.hex > a {
     font-size: 18px;
     word-spacing: 1px;
     -moz-transition: none 1s;
@@ -139,7 +139,7 @@ html, body {
     transform: rotateY(180deg);
 }
 
-.social:hover a{
+.social:hover a {
     width: 188px;
 }
 
@@ -186,10 +186,10 @@ html, body {
     width: 188px;
 }
 
-.activity-likes{
+.activity-likes {
     position: absolute;
     font-size: 46px;
-    bottom: 12px;
+    bottom: 20px;
     text-align: center;
     width: 100%;
 }
@@ -200,6 +200,19 @@ html, body {
     bottom: 10px;
     text-align: center;
     width: 100%;
+}
+
+.subText i {
+    transition: all .5s ease;
+}
+
+.subText i:hover {-webkit-box-shadow: 0 4px 13px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 4px 13px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 4px 13px 0 rgba(0,0,0,0.75);
+    transition: all .5s ease;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
 }
 
 .message {
