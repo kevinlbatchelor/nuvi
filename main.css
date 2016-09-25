@@ -17,7 +17,6 @@ html, body {
     margin: 0 auto;
 }
 
-
 .social {
     position: relative;
     perspective: 1000px;
@@ -27,9 +26,13 @@ html, body {
     margin-left: 97px;
 }
 
-
-.social:hover .flipper {
+.social:hover .flipper, .social.hover .flipper {
     transform: rotateY(180deg);
+
+}
+
+.social:hover .flipper .back {
+    opacity: 1;
 }
 
 .social:hover a {
@@ -71,6 +74,7 @@ html, body {
 
 .back {
     transform: rotateY(180deg);
+    opacity :0;
 }
 
 .activity-likes {
