@@ -6,6 +6,7 @@
     <title>nuvi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="grid.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -42,11 +43,16 @@
                     <div class="back">
                         <div class="social-item">
                             <div class="message" ng-if="post.activity_attachment_type !='image/jpeg'">{{post.activity_message}}</div>
+                            <div ng-class="post.activity_attachment_type =='image/jpeg' ? 'with-image': 'no-image'">
                             <div class="activity-likes">{{post.activity_likes}}</div>
                             <div class="subText" ng-click="ctrl.like($index, $parent.$index)"><a><i class="fa fa-thumbs-up"></i></a></div>
+                            </div>
                         </div>
                         <div class="hex">
-                            <a href="#" ng-if="post.activity_attachment_type =='image/jpeg'" ng-style="{'background-image':'url('+post.activity_message+')'}">
+                            <!--testing with a real image instead of a placeholder-->
+                            <a href="#" ng-if="post.activity_attachment_type =='image/jpeg'" style="background-image: url('https://unsplash.it/300/300')">
+                            <!--getting image from the api call                                -->
+                            <!--<a href="#" ng-if="post.activity_attachment_type =='image/jpeg'" ng-style="{'background-image':'url('+post.activity_message+')'}">-->
                                 <div class="hex-1"></div>
                                 <div class="hex-2"></div>
                             </a>
